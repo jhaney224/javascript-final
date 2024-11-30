@@ -1,0 +1,45 @@
+/* Jacob Haney - 4/15/24 */
+/* Mobile & Global Styles */
+body { 
+    background-color: #2FF3E0; 
+    --text-color: #ec1cae;
+}
+
+p { display: inline-block; }
+
+p, h1, label { color: var(--text-color); }
+
+#results {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 0.625em;
+}
+
+#results > p { color: var(--text-color); }
+
+.column { 
+    flex: 0.5;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Tablet Styles */
+@media (min-width: 37.5em) { /* ~600px */
+    .column { flex: 1; }
+}
+
+/* Desktop Styles */
+@media (min-width: 64em) { /* ~1024px */
+    #results {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
+        grid-template-areas: "addition subtraction multiplication division";
+    }
+
+    #addition { grid-area: addition; }
+    #subtraction { grid-area: subtraction; }
+    #multiplication { grid-area: multiplication; }
+    #division { grid-area: division; }
+}
